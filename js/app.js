@@ -45,3 +45,97 @@ particlesJS.load('particles-js', 'js/particles.json', function () {
 })
 
 // ABOUT PAGE
+gsap.fromTo(
+  '.about_left',
+  {
+    scale: 0.2,
+    autoAlpha: 0,
+    x: '-100%',
+  },
+  {
+    scale: 1,
+    autoAlpha: 1,
+    duration: 1,
+    x: 0,
+    scrollTrigger: {
+      trigger: '.about_left',
+      start: 'bottom bottom',
+      end: 'center center',
+      scrub: 1,
+    },
+  }
+)
+
+gsap.utils.toArray('.about_right span').forEach((span) => {
+  gsap.fromTo(
+    span,
+    {
+      letterSpacing: '10px',
+      autoAlpha: 0,
+      x: 300,
+      skewX: 65,
+    },
+    {
+      letterSpacing: '0',
+      autoAlpha: 1,
+      x: 0,
+      skewX: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: span,
+        scrub: 1,
+        start: 'bottom bottom',
+        end: 'center center',
+      },
+    }
+  )
+})
+
+// SKILLS
+gsap.fromTo(
+  '.skill_list',
+  {
+    autoAlpha: 0,
+    x: '-100%',
+  },
+  {
+    autoAlpha: 1,
+    x: 0,
+    duration: 2,
+    scrollTrigger: {
+      trigger: '.skill_list',
+    },
+  }
+)
+
+gsap.fromTo(
+  '.skill_right-list',
+  {
+    autoAlpha: 0,
+    x: '100%',
+  },
+  {
+    autoAlpha: 1,
+    x: 0,
+    duration: 2,
+    stagger: 0.5,
+    scrollTrigger: {
+      trigger: '.skill_right',
+    },
+  }
+)
+// PROJECT
+gsap.fromTo(
+  '.project_card',
+  1,
+  {
+    autoAlpha: 0,
+  },
+  {
+    autoAlpha: 1,
+    stagger: 0.4,
+    scrollTrigger: {
+      trigger: '.project_wrapper',
+    },
+  }
+)
